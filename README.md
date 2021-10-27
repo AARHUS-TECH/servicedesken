@@ -13,7 +13,8 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 * Serveren er ved at være gammel, trænger til opdatering
 
 # Systemet som kører servicedesken
-    skp@SKP-DEB9-01:~$ cat /etc/*-release
+cat /etc/*-release
+    
     PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
     NAME="Debian GNU/Linux"
     VERSION_ID="9"
@@ -22,3 +23,11 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
     HOME_URL="https://www.debian.org/"
     SUPPORT_URL="https://www.debian.org/support"
     BUG_REPORT_URL="https://bugs.debian.org/"
+
+eller man kan køre
+lsb_release -a
+    No LSB modules are available.
+    Distributor ID: Debian
+    Description:    Debian GNU/Linux 9.5 (stretch)
+    Release:        9.5
+    Codename:       stretch
