@@ -13,7 +13,7 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 * Serveren er ved at være gammel, trænger til opdatering
 
 # Systemet som kører servicedesken
-cat /etc/*-release
+    cat /etc/*-release
     
     PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
     NAME="Debian GNU/Linux"
@@ -25,10 +25,16 @@ cat /etc/*-release
     BUG_REPORT_URL="https://bugs.debian.org/"
 
 eller man kan køre:
-lsb_release -a
+    lsb_release -a
 
     No LSB modules are available.
     Distributor ID: Debian
     Description:    Debian GNU/Linux 9.5 (stretch)
     Release:        9.5
     Codename:       stretch
+
+man finder oplysninger om kernen:
+    uname -mrs
+    
+    Linux 4.9.0-8-amd64 x86_64
+
