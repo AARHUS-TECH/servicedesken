@@ -24,8 +24,9 @@ cat /etc/*-release
     SUPPORT_URL="https://www.debian.org/support"
     BUG_REPORT_URL="https://bugs.debian.org/"
 
-eller man kan køre
+eller man kan køre:
 lsb_release -a
+
     No LSB modules are available.
     Distributor ID: Debian
     Description:    Debian GNU/Linux 9.5 (stretch)
