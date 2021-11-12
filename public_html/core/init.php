@@ -1,7 +1,6 @@
 <?php
-
 /**
- * Beskrivelse kommer snarest
+ * Denne fil er connected 
  *
  * @author      Benjamin Jørgensen <bj@dunkstormen.dk>
  * @copyright   Aarhus Tech SKP 2017
@@ -11,7 +10,8 @@ session_start();
 
 $GLOBALS['config'] = array(
     'database' => array(
-        'dsn'       => 'mysql:host=127.0.0.1;dbname=skp_servicedesk',       # Database Host
+        // 'dsn'       => 'mysql:host=127.0.0.1;dbname=skp_servicedesk',       # Database Host
+        'dsn'       => 'mysql:host=10.254.254.25:3306;dbname=skp_servicedesk',       # Database Host
         'username'  => 'skp',                                           # Database Brugernavn
         'password'  => 'SKP2017!',                                              # Database Password
         'charset'   => 'utf8'                                           # Database Charset
