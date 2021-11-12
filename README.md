@@ -10,7 +10,9 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 * Tjek af databasen indholder den den rigtige information og de rigtige felter eller kan den optimeres.
 * Visning af id er taget væk - det gør det sværere at backtracke opgaver for eleverne.
 * Eleverne har ikke adgang til at se afsluttede sager. Det rettes så elev rollen kan se men ikke redigere i lukkede sager.
-* Serveren er ved at være gammel, trænger til opdatering
+* Serveren er ved at være gammel, trænger til opdatering.
+* Søge funktion som søger på beskrivelse, email og navn.
+* Der lavet noget til at sætte ønsket sortering. Funktionen laves færdig.
 
 # Systemet som kører servicedesken
     cat /etc/*-release
