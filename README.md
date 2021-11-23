@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Servicedesken ticketsystem
 
 Softwaren bliver brugt af servicedesken til at lave tickets for indleverede opgaver.
@@ -41,3 +42,6 @@ man finder oplysninger om kernen:
     
     Linux 4.9.0-8-amd64 x86_64
 
+=======
+# servicedesken
+>>>>>>> 93d8338ec08e7be30cf8014d867e14992d7e8637
