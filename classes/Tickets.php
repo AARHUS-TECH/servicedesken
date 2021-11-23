@@ -414,7 +414,7 @@
             foreach($result as $row) {
                 echo '<tr>';
                 $temp_date = new DateTime($row->modtager_dato);       
-                echo '<td><nobr>' . $temp_date->format('d-m-Y') . '</nobr><br />'. $temp_date->format('H:i') . '</td>';
+                echo '<td><nobr>' . $temp_date->format('d-m-Y') . '</nobr><br />Id: '. $row->sagsID . '</td>';
                 echo '<td><span class="badge ' . $this->getPriortetClass($row->priortet) . '">' . $row->priortet . '</span></td>';
                 echo '<td><span class="badge ' . $this->getStatusClass($row->status) . '">' . $row->status . '</span></td>';
                 echo '<td>' . $row->kategori . '</td>'; 
@@ -425,21 +425,22 @@
                     $fejlbeskrivelse = $row->produkt_fejlbeskrivelse;
                 }
 
-                echo '<td title="' . $row->produkt_fejlbeskrivelse . '">' . $fejlbeskrivelse . '<br /><div style="text-align: right;"><a class="badge badge-primary" href="/admin/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></div></td>'; 
+                echo '<td title="' . $row->produkt_fejlbeskrivelse . '">' . $fejlbeskrivelse . '<br />';
+                echo '<div style="text-align: right;"><a class="badge badge-primary" href="/admin/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></div></td>'; 
                 echo '<td>' . $row->kontakt_navn . '</td>';
                 echo '</tr>';         
             }
         }
 
 
-        public function getAllLukketAdminTickets() {
+        public function getAllLukketAdminTickets($tmp_admin=false) {
             $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE servicedesk_sager.status = 'Lukket' ORDER BY servicedesk_sager.modtager_dato DESC";
             $result = $this->_db->custom_query($sql);
             
             foreach($result as $row) {
                 echo '<tr>';
-                //echo '<td>' . $row->sagsID .'</td>';
-                echo '<td>' . $row->modtager_dato .'</td>';
+                $temp_date = new DateTime($row->modtager_dato);
+                echo '<td><nobr>' . $temp_date->format('d-m-Y') .'</nobr><br />Id: ' . $row->sagsID .'</td>';
                 echo '<td><span class="badge ' . $this->getStatusClass($row->status) . '">' . $row->status . '</span></td>';
                 echo '<td><span class="badge ' . $this->getPriortetClass($row->priortet) . '">' . $row->priortet . '</span></td>';
                 echo '<td>' . $row->kategori . '</td>'; 
@@ -450,9 +451,16 @@
                     $fejlbeskrivelse = $row->produkt_fejlbeskrivelse;
                 }
 
-                echo '<td title="' . $row->produkt_fejlbeskrivelse . '">' . $fejlbeskrivelse . '<br /><a href="/elev/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></td>'; 
-                echo '<td><a class="btn btn-outline-success full-width" href="/admin/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></td>';
-                echo '</tr>';         
+                echo '<td title="' . $row->produkt_fejlbeskrivelse . '">' . $fejlbeskrivelse . '<br />';
+                if($tmp_admin)
+                {
+                    echo '<div style="text-align: right;"><a class="badge badge-primary" href="/admin/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></div></td>'; 
+                } else {
+                    echo '<div style="text-align: right;">&nbsp;</div></td>'; 
+                }
+                
+                echo '<td>' . $row->kontakt_navn . '</td>';
+                echo '</tr>';     
             }
         }
 

@@ -25,8 +25,8 @@
                                     <div class="col">
                                         <a class="btn btn-outline-success full-width" href="/admin/tickets/opretSag.php">Opret ny sag</a>
                                     </div>
-                                    <div class="col">
-                                        <a class="btn btn-outline-success full-width" href="/admin/tickets/lukkedeSager.php">Lukkede sager</a>
+                                    <div class="col" id="closed-cases">
+                                        <a id="closed-cases-link" class="btn btn-outline-success full-width" href="/admin/tickets/lukkedeSager.php">Lukkede sager</a>
                                     </div>
                                     <div class="col">
                                         <a class="btn btn-outline-danger full-width" href="/admin/">Tilbage</a>
