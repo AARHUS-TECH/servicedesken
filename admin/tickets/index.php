@@ -12,10 +12,52 @@ if(!Session::exists('userID')) {
     Redirect::to('/elev/');
 }*/
 
+// Getting sorting by field and sorting direction
+if ($_REQUEST['sorting']) # change currency on user request
+{
+    $sorting = $_REQUEST['sorting']; # use it
+    setcookie('sorting', $_REQUEST['sorting'], 0, 'http://servicedesken.skp/admin/tickets/'); # store it
+
+    if($_REQUEST['direction'])
+        $direction = $_REQUEST['direction'];
+    else
+        $direction = "ASC";
+
+
+    if($sorting == "modtager_dato")
+    {
+        $sql = "ORDER BY servicedesk_sager.modtager_dato $direction, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+    }
+    elseif ($sorting == "priortet") 
+    {
+        $sql = "ORDER BY servicedesk_sager.priortet $direction, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+    }    
+    elseif ($sorting == "status") 
+    {
+        $sql = "ORDER BY servicedesk_sager.status $direction, servicedesk_sager.priortet DESC";
+    }
+    elseif ($sorting == "sags_kategori") 
+    {
+        $sql = "ORDER BY servicedesk_sager.sags_kategori $direction, servicedesk_sager.priortet ASC, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+    }
+    elseif ($sorting == "produkt_fejlbeskrivelse") 
+    {
+        $sql = "ORDER BY servicedesk_sager.produkt_fejlbeskrivelse $direction, servicedesk_sager.priortet DESC, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+    }
+    elseif ($sorting == "kontakt_navn") 
+    {
+        $sql = "ORDER BY servicedesk_sager.kontakt_navn $direction, servicedesk_sager.priortet DESC, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+    }
+}
+else # use default
+{
+    $sql = "ORDER BY servicedesk_sager.priortet DESC, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+}
+
 $userdata = $user->getInfo(Session::get('userID'));
 
 include_once "../../assets/tpl/cases_header.php";
-$ticket->getAllAdminTickets();
+$ticket->getAllAdminTickets($sql);
 include_once "../../assets/tpl/cases_footer.php";
 
 ?>

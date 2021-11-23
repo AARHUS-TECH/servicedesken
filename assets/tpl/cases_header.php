@@ -36,12 +36,13 @@
                                     </div>
                                 </div>
                             </fieldset>
-                            <input type="text" id="sorting" name="sorting" value="<?php echo htmlspecialchars($_POST["sorting"]); ?>">
-                            <input type="text" id="direction" name="direction" value="<?php echo htmlspecialchars($_POST["direction"]); ?>">
+                            <input type="hidden" id="sorting" name="sorting" value="<?php echo htmlspecialchars($_POST["sorting"]); ?>">
+                            <input type="hidden" id="direction" name="direction" value="<?php echo htmlspecialchars($_POST["direction"]); ?>">
                         </form>
 
                         <script>
-                        function setFilters(sorting) {
+                        function setFilters(sorting) 
+                        {
                             // Hvis de er samme "kolonne" toogler den imellem asc og desc
                             // ellers nulstilles retningen til asc
                             if(document.getElementById('sorting').value == sorting)
@@ -54,11 +55,11 @@
                             }
                             else
                             {
+                                // If the field is empty
                                 document.getElementById('sorting').value = sorting;
                                 document.getElementById('direction').value = "ASC";
                             }
                     
-
                             document.getElementById('form1').submit();
                         }
                         </script>

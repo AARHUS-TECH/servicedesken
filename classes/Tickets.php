@@ -356,7 +356,7 @@
 
 
         public function getAllTickets() {
-             $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE status <> 'Lukket' ORDER BY servicedesk_sager.priortet DESC, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+            $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE status <> 'Lukket' ORDER BY servicedesk_sager.priortet DESC, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
             $result = $this->_db->custom_query($sql);
 
             foreach($result as $row) {
@@ -407,8 +407,17 @@
         }
 
 
-        public function getAllAdminTickets() {
-            $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE status <> 'Lukket' ORDER BY servicedesk_sager.priortet DESC, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+        public function getAllAdminTickets($sorting) {
+            if( isset($sorting) && $sorting != "")
+            {
+                $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE status <> 'Lukket' $sorting";
+                echo "<script>console.log(\"$sql\")</script>";
+            } 
+            else 
+            {
+                $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE status <> 'Lukket' ORDER BY servicedesk_sager.priortet DESC, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+            }
+                
             $result = $this->_db->custom_query($sql);
             
             foreach($result as $row) {
@@ -433,8 +442,19 @@
         }
 
 
-        public function getAllLukketAdminTickets($tmp_admin=false) {
-            $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE servicedesk_sager.status = 'Lukket' ORDER BY servicedesk_sager.modtager_dato DESC";
+        public function getAllLukketAdminTickets($tmp_admin=false, $sorting="") {
+            if( isset($sorting) && $sorting != "")
+            {
+                $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE servicedesk_sager.status = 'Lukket' $sorting";
+                echo "<script>console.log(\"$sql\")</script>";
+            } 
+            else 
+            {
+                $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE servicedesk_sager.status = 'Lukket' ORDER BY servicedesk_sager.modtager_dato DESC";
+            }
+
+            echo "<script>console.log(\"$sql\")</script>";
+
             $result = $this->_db->custom_query($sql);
             
             foreach($result as $row) {
