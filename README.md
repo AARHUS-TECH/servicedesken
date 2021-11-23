@@ -6,15 +6,16 @@ Softwaren bliver brugt af servicedesken til at lave tickets for indleverede opga
 Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 
 # Rettelser der ønskes udført
-* Der findes to mapper elev og admin, som indeholder meget af den samme kode.
-* Der er allerede taget højde for login rolle, den skal bruges direkte i koden og ikke som nu sende brugen i forskellige mapper.
-* Tjek af databasen indholder den den rigtige information og de rigtige felter eller kan den optimeres.
-* Visning af id er taget væk - det gør det sværere at backtracke opgaver for eleverne.
-* Eleverne har ikke adgang til at se afsluttede sager. Det rettes så elev rollen kan se men ikke redigere i lukkede sager.
-* Serveren er ved at være gammel, trænger til opdatering.
-* Søge funktion som søger på beskrivelse, email og navn.
-* Der lavet noget til at sætte ønsket sortering. Funktionen laves færdig.
-* Måske skulle man lave det Adaptive, så den også kan køre på elevernes mobil.
+- [ ] Der findes to mapper elev og admin, som indeholder meget af den samme kode.
+- [ ] Der er allerede taget højde for login rolle, den skal bruges direkte i koden og ikke som nu sende brugen i forskellige mapper.
+- [ ] Tjek af databasen indholder den den rigtige information og de rigtige felter eller kan den optimeres.
+- [x] Visning af id er taget væk - det gør det sværere at backtracke opgaver for eleverne.
+- [ ] Eleverne har ikke adgang til at se afsluttede sager. Det rettes så elev rollen kan se men ikke redigere i lukkede sager.
+- [x] Der vises ikke kundenavn på siden: Lukkede sager
+- [ ] Serveren er ved at være gammel, trænger til opdatering.
+- [ ] Søge funktion som søger på beskrivelse, email og navn.
+- [ ] Der lavet noget til at sætte ønsket sortering. Funktionen laves færdig.
+- [ ] Måske skulle man lave det Adaptive, så den også kan køre på elevernes mobil.
 
 # Systemet som kører servicedesken
     cat /etc/*-release
