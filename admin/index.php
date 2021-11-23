@@ -10,12 +10,6 @@ if(!Session::exists('userID')) {
 }
 
 
-if( $user->isAdmin(Session::get('userID')) )
-{
-    $link = "admin";
-} else {
-    $link = "elev";
-}
 
 $userdata = $user->getInfo(Session::get('userID'));
 
@@ -26,8 +20,7 @@ if ( $user->isAdmin(Session::get('userID')) )
  ?>
 
                                     <div class="form-group text-center">
-                                        <a class="btn btn-outline-success full-width" href="/
-										<?php echo $link; ?>/bruger/">Bruger systemet</a>
+                                        <a class="btn btn-outline-success full-width" href="/admin/bruger/">Bruger systemet</a>
                                     </div>
 
 <?php 
