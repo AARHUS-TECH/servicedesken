@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Servicedesken ticketsystem
 
 Softwaren bliver brugt af servicedesken til at lave tickets for indleverede opgaver.
