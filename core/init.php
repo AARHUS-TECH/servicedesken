@@ -17,7 +17,7 @@ $GLOBALS['config'] = array(
         'charset'   => 'utf8'                                           # Database Charset
     ),
     'system_info' => array(
-        'version'   => '1.0.2'
+        'version'   => '1.2.0'
     ),
     'servicedesk' => array(
         'telefon'   => '22234590',

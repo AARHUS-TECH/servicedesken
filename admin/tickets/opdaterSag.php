@@ -154,9 +154,10 @@ $userdata = $user->getInfo(Session::get('userID'));
                                 </div>
                             </div>
 
-                            <footer class="text-center">&copy; Aarhus Tech SKP <?php echo date('Y'); ?> - Udviklet af Benjamin Jørgensen</footer>
+                            <footer class="text-center">© Aarhus Tech SKP 2018-2021</footer>
+                            <footer class="text-center">Udviklet af elever og instruktører SKP Data IT</footer>
                             <footer class="text-center">Version <?php echo Config::get('system_info/version'); ?></footer>
-                            </blockquote>
+                           </blockquote>
                         </div>
                     </div>
                 </div>

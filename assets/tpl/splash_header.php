@@ -23,7 +23,7 @@
                                 <fieldset>
                                     <div class="form-group form-row text-center">
                                         <div class="col">
-                                            <a class="btn btn-outline-success full-width" href="/<?php echo $link; ?>/tickets/">Ticket systemet</a>
+                                            <a class="btn btn-outline-success full-width" href="/admin/tickets/">Ticket systemet</a>
                                         </div>
                                         <div class="col">
                                             <a class="btn btn-outline-success full-width" href="http://inventar.ats-skpdatait.dk/" target="_inventar_window" title="Dette åbner et nyt vindue.">Inventar systemet</a>
