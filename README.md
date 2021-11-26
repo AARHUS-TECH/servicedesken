@@ -12,9 +12,10 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 - [x] Eleverne har ikke adgang til at se afsluttede sager. Det rettes så elev rollen kan se men ikke redigere i lukkede sager.
 - [x] Der vises ikke kundenavn på siden: Lukkede sager
 - [ ] Serveren er ved at være gammel, trænger til opdatering.
-- [ ] Søge funktion som søger på beskrivelse, email og navn.
+- [x] Søge funktion som søger på beskrivelse, email og navn.
 - [x] Der lavet noget til at sætte ønsket sortering. Funktionen laves færdig.
 - [ ] Måske skulle man lave det Adaptive, så den også kan køre på elevernes mobil.
+- [x] Modtager findes ikke i databasen! fejl som stopper Opdater sagsiden
 
 # Systemet som kører servicedesken
     cat /etc/*-release
