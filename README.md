@@ -13,7 +13,7 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 - [x] Der vises ikke kundenavn på siden: Lukkede sager
 - [ ] Serveren er ved at være gammel, trænger til opdatering.
 - [ ] Søge funktion som søger på beskrivelse, email og navn.
-- [ ] Der lavet noget til at sætte ønsket sortering. Funktionen laves færdig.
+- [x] Der lavet noget til at sætte ønsket sortering. Funktionen laves færdig.
 - [ ] Måske skulle man lave det Adaptive, så den også kan køre på elevernes mobil.
 
 # Systemet som kører servicedesken
