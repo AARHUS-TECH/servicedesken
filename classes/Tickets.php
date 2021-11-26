@@ -423,7 +423,7 @@
             foreach($result as $row) {
                 echo '<tr>';
                 $temp_date = new DateTime($row->modtager_dato);       
-                echo '<td><nobr>' . $temp_date->format('d-m-Y') . '</nobr><br />Id: '. $row->sagsID . '</td>';
+                echo '<td scope="row"><nobr>' . $temp_date->format('d-m-Y') . '</nobr><br />Id: '. $row->sagsID . '</td>';
                 echo '<td><span class="badge ' . $this->getPriortetClass($row->priortet) . '">' . $row->priortet . '</span></td>';
                 echo '<td><span class="badge ' . $this->getStatusClass($row->status) . '">' . $row->status . '</span></td>';
                 echo '<td>' . $row->kategori . '</td>'; 
@@ -460,7 +460,7 @@
             foreach($result as $row) {
                 echo '<tr>';
                 $temp_date = new DateTime($row->modtager_dato);
-                echo '<td><nobr>' . $temp_date->format('d-m-Y') .'</nobr><br />Id: ' . $row->sagsID .'</td>';
+                echo '<td scope="row"><nobr>' . $temp_date->format('d-m-Y') .'</nobr><br />Id: ' . $row->sagsID .'</td>';
                 echo '<td><span class="badge ' . $this->getStatusClass($row->status) . '">' . $row->status . '</span></td>';
                 echo '<td><span class="badge ' . $this->getPriortetClass($row->priortet) . '">' . $row->priortet . '</span></td>';
                 echo '<td>' . $row->kategori . '</td>'; 
@@ -543,4 +543,33 @@
 
             return $ticketData;
         }
+
+
+        public function getSortingResult($sql) 
+        {               
+            $result = $this->_db->custom_query($sql);
+
+            echo "Modtaget: $sql";
+            
+            foreach($result as $row) {
+                echo '<tr>';
+                $temp_date = new DateTime($row->modtager_dato);       
+                echo '<td scope="row"><nobr>' . $temp_date->format('d-m-Y') . '</nobr><br />Id: '. $row->sagsID . '</td>';
+                echo '<td><span class="badge ' . $this->getPriortetClass($row->priortet) . '">' . $row->priortet . '</span></td>';
+                echo '<td><span class="badge ' . $this->getStatusClass($row->status) . '">' . $row->status . '</span></td>';
+                echo '<td>' . $row->kategori . '</td>'; 
+
+                if(strlen($row->produkt_fejlbeskrivelse) > 110) {
+                    $fejlbeskrivelse = substr($row->produkt_fejlbeskrivelse, 0, 110) . ' ...';
+                } else {
+                    $fejlbeskrivelse = $row->produkt_fejlbeskrivelse;
+                }
+
+                echo '<td title="' . $row->produkt_fejlbeskrivelse . '">' . $fejlbeskrivelse . '<br />';
+                echo '<div style="text-align: right;"><a class="badge badge-primary" href="/admin/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></div></td>'; 
+                echo '<td>' . $row->kontakt_navn . '</td>';
+                echo '</tr>';         
+            }
+        }
+
     }

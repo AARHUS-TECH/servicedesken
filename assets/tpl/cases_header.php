@@ -3,9 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Servicedesken | Aarhus Tech SKP</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <!-- link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
 </head>
 <body>
 <div class="container">
@@ -40,6 +44,12 @@
                             <input type="hidden" id="direction" name="direction" value="<?php echo htmlspecialchars($_POST["direction"]); ?>">
                         </form>
 
+                        <div class="input-group" style="margin-bottom: 10px;">
+                            <input id="searchtext" type="search" class="form-control rounded" placeholder="Søgetekst" aria-label="Søgetekst"
+                            aria-describedby="search-addon" />
+                            <button onclick="document.location=('search.php?searchtext=' + document.getElementById('searchtext').value ) + '&scope=all';" type="button" class="btn btn-outline-primary" style="margin-left: 10px;">s&oslash;g</button>
+                        </div>
+
                         <script>
                         function setFilters(sorting) 
                         {
@@ -64,15 +74,15 @@
                         }
                         </script>
 
-                        <table class="table table-hover table-bordered">
-                            <thead class="thead-dark">
+                        <table class="table table-hover" style="color: white;">
+                            <thead style="background-color: #444;">
                             <tr>
-                                <th style="white-space: nowrap;">Oprettet d. <a style="text-decoration: none;" href="#" onClick="setFilters('modtager_dato')">&udarr;</a></th>
-                                <th style="white-space: nowrap;">Prioritet <a style="text-decoration: none;" href="#"   onClick="setFilters('priortet')">&udarr;</a></th>
-                                <th style="width: 150px;">Status <a style="text-decoration: none;" href="#"             onClick="setFilters('status')">&udarr;</a></th>
-                                <th>Kategori <a style="text-decoration: none;" href="#"                                 onClick="setFilters('sags_kategori')">&udarr;</a></th>
-                                <th style="width: 400px;">Fejlbeskrivelse <a style="text-decoration: none;" href="#"    onClick="setFilters('produkt_fejlbeskrivelse')">&udarr;</a></th>
-                                <th>Kundenavn <a style="text-decoration: none;" href="#"                                onClick="setFilters('kontakt_navn')">&udarr;</a></th>
+                                <th scope="col" style="white-space: nowrap;">Oprettet d. <a style="text-decoration: none;" href="#" onClick="setFilters('modtager_dato')">&udarr;</a></th>
+                                <th scope="col" style="white-space: nowrap;">Prioritet <a style="text-decoration: none;" href="#"   onClick="setFilters('priortet')">&udarr;</a></th>
+                                <th scope="col" style="width: 150px;">Status <a style="text-decoration: none;" href="#"             onClick="setFilters('status')">&udarr;</a></th>
+                                <th scope="col" style="white-space: nowrap;">Kategori <a style="text-decoration: none;" href="#"                                 onClick="setFilters('sags_kategori')">&udarr;</a></th>
+                                <th scope="col" style="width: 400px;">Fejlbeskrivelse <a style="text-decoration: none;" href="#"    onClick="setFilters('produkt_fejlbeskrivelse')">&udarr;</a></th>
+                                <th scope="col" style="white-space: nowrap;">Kundenavn <a style="text-decoration: none;" href="#"                                onClick="setFilters('kontakt_navn')">&udarr;</a></th>
                             </tr>
                             </thead>
                             <tbody>

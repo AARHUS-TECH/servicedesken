@@ -58,7 +58,6 @@ $userdata = $user->getInfo(Session::get('userID'));
 
 include_once "../../assets/tpl/cases_header.php";
 $ticket->getAllLukketAdminTickets($user->isAdmin(Session::get('userID')), $sql);
-echo "<!-- test -->";
 ?>
 <script>
     document.getElementById("closed-cases-link").innerHTML = "Åbne sager"
