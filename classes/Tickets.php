@@ -492,8 +492,9 @@
             foreach($result as $row) {
                 $modtagerdata = $this->_user->getInfo($row->modtagerID);
                 if(!$modtagerdata) {
-                    die('Modtager findes ikke i databasen! (Modtager ID: ' . $row->modtagerID . ')');
+                    echo('Modtager findes ikke i databasen! (Modtager ID: ' . $row->modtagerID . ')');
                 }
+
                 if($row->repareretID) {
                     $repareretdata = $this->_user->getInfo($row->repareretID);
                 } else {

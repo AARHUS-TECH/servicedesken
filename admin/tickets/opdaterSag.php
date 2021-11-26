@@ -131,7 +131,7 @@ $userdata = $user->getInfo(Session::get('userID'));
                                                 <input type="datetime-local" id="inputRepareretDato" name="repareretDato" value="<?php echo $currentTicket['repareretDato2']; ?>">
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputRepareretBeskrivelse">Beskrivelse af arbejde udført</label>
+                                                <label for="inputRepareretBeskrivelse">Beskrivelse af udført arbejde</label>
                                                 <textarea rows="6" type="text" class="form-control" id="eksempelRepareretBeskrivelse" name="repareretBeskrivelse" placeholder="Reparations beskrivelse"><?php echo $currentTicket['repareretBeskrivelse']; ?></textarea>
                                             </div>
                                             <div class="form-group form-row">    
