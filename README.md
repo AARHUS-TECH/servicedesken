@@ -46,7 +46,4 @@ man finder oplysninger om kernen:
     uname -mrs
     
     Linux 4.9.0-8-amd64 x86_64
-
-=======
-# servicedesken
->>>>>>> 93d8338ec08e7be30cf8014d867e14992d7e8637
+<hr />
