@@ -15,7 +15,8 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 - [x] Søge funktion som søger på beskrivelse, email og navn.
 - [x] Der lavet noget til at sætte ønsket sortering. Funktionen laves færdig.
 - [ ] Måske skulle man lave det Adaptive, så den også kan køre på elevernes mobil.
-- [x] Modtager findes ikke i databasen! fejl som stopper Opdater sagsiden
+- [x] Modtager findes ikke i databasen! fejl som stopper Opdater sagsiden.
+- [ ] Der mangler en funktion som håndterer når elever slettes fra systemet, eks. når de meldes ud af SKP. Hænger sammen med fejlen Modtager findes ikke i databasen!. Rettes til at gives beskeden: Tidligere elev.
 
 # Systemet som kører servicedesken
     cat /etc/*-release
