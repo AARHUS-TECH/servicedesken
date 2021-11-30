@@ -25,6 +25,7 @@
             }
         }
 
+
         public function opretBruger($navn, $brugernavn, $password = null, $user_level) {
 
             if(!empty($navn) && !empty($brugernavn) && isset($password)) {
@@ -50,6 +51,7 @@
             }
         }
 
+
         public function update($userID, $navn, $brugernavn, $password = null, $user_level) {
             if(!$password == null) {
                 $data = array(
@@ -72,15 +74,18 @@
 
         }
 
+
         public function delete($id) {
             $this->_db->delete('servicedesk_bruger', 'id', $id);
         }
+
 
         public function auth() {
             if(Input::get('brugernavn')) {
                 $this->login(Input::get('brugernavn'), Input::get('adgangskode'));
             }
         }
+
 
         private function login($value1, $value2) {
             $sql = "SELECT userID, password FROM servicedesk_bruger WHERE brugernavn='$value1' LIMIT 1";
@@ -111,6 +116,7 @@
             }
         }
 
+
         public function getInfo($value) {
             if(is_numeric($value)) {
                 $sql = "SELECT * FROM servicedesk_bruger WHERE userID='$value'";
@@ -131,6 +137,7 @@
 
         }
 
+
         public function getStatusString($value) {
             switch($value) {
                 case '0':
@@ -148,6 +155,7 @@
 
             return $status;
         }
+
 
         public function getStatusClass($value) {
             switch($value) {
@@ -167,6 +175,7 @@
             return $status;
         }
 
+
         public function isAdmin($userID) {
             $data = array(
                 'userID' => $userID,
@@ -176,6 +185,7 @@
             return $this->_db->check_exist('servicedesk_bruger', $data);
         }
 
+        
         public function getAllUsers() {
             $sql = "SELECT * FROM servicedesk_bruger ORDER BY user_level DESC";
             $result = $this->_db->custom_query($sql);
@@ -195,6 +205,7 @@
             }
         }
 
+        
         public function getSelectedUserLevel($user_level) {
             switch($user_level) {
                 case '0':
