@@ -15,7 +15,11 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 - [x] Søge funktion som søger på beskrivelse, email og navn.
 - [x] Der lavet noget til at sætte ønsket sortering. Funktionen laves færdig.
 - [ ] Måske skulle man lave det Adaptive, så den også kan køre på elevernes mobil.
-- [x] Modtager findes ikke i databasen! fejl som stopper Opdater sagsiden
+- [x] Bootstrap opdateres til seneste 4.0.0.
+- [x] Modtager findes ikke i databasen! fejl som stopper Opdater sagsiden.
+- [ ] Der mangler en funktion som håndterer når elever slettes fra systemet, eks. når de meldes ud af SKP. Hænger sammen med fejlen Modtager findes ikke i databasen!. Rettes til at gives beskeden: Tidligere elev.
+- [ ] Sidernes header skal have hvid tekst, så man kan læse det
+- [ ] Tabellens hoved laves sort med tynd grøn border, som de andre grafiske elementer.
 
 # Systemet som kører servicedesken
     cat /etc/*-release
@@ -42,7 +46,4 @@ man finder oplysninger om kernen:
     uname -mrs
     
     Linux 4.9.0-8-amd64 x86_64
-
-=======
-# servicedesken
->>>>>>> 93d8338ec08e7be30cf8014d867e14992d7e8637
+<hr />
