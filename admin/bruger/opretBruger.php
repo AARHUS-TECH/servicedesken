@@ -89,18 +89,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </fieldset>
                         </form>
 
-                        <footer class="text-center">&copy; Aarhus Tech SKP <?php echo date('Y'); ?> - Udviklet af Benjamin Jørgensen</footer>
-                        <footer class="text-center">Version <?php echo Config::get('system_info/version'); ?></footer>
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/popper.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/dismiss-alerts.js"></script>
-    </body>
-</html>
+                        <?php require_once("../../assets/tpl/cases_footer.php");  ?>
