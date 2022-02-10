@@ -35,12 +35,14 @@ class Database {
         if ($data!==null) {
         $dat=array_values($data);
         }
+
         $sel = $this->pdo->prepare( $sql );
         if ($data!==null) {
             $sel->execute($dat);
         } else {
             $sel->execute();
         }
+        
         $sel->setFetchMode( PDO::FETCH_OBJ );
         return $sel;
     }
