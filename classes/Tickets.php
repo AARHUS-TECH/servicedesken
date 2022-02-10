@@ -373,7 +373,7 @@
                     $fejlbeskrivelse = $row->produkt_fejlbeskrivelse;
                 }
 
-                echo '<td title="' . $row->produkt_fejlbeskrivelse . '">' . $fejlbeskrivelse . '<br /><a href="/elev/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></td>'; 
+                echo '<td title="' . $row->produkt_fejlbeskrivelse . '">' . $fejlbeskrivelse . '<br /><a href="/admin/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></td>'; 
                 echo '<td>' . $row->kontakt_navn . '</td>';
                 echo '</tr>';         
             }
@@ -401,7 +401,7 @@
                 }
 
                 echo '<td title="' . $row->produkt_fejlbeskrivelse . '">' . $fejlbeskrivelse . '</td>'; 
-                echo '<td><a class="btn btn-outline-success full-width" href="/elev/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></td>';
+                echo '<td><a class="btn btn-outline-success full-width" href="/admin/tickets/opdaterSag.php?id=' . $row->sagsID . '">Rediger</a></td>';
                 echo '</tr>';         
             }
         }
