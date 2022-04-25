@@ -154,5 +154,4 @@ $userdata = $user->getInfo(Session::get('userID'));
                                 </div>
                             </div>
 
-include_once "../../assets/tpl/cases_footer.php";
-?>
+<?php include_once "../../assets/tpl/cases_footer.php"; ?>
