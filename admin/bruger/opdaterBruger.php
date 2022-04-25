@@ -12,6 +12,19 @@ if(Session::exists('userID')) {
     Redirect::to('/');
 }
 
+
+if ($_GET['action'] === "delete")
+{
+    $deluserid = $_GET['id'];
+    if($deluserid != NULL && $deluserid != "" && $deluserid != 0)
+    {
+        echo "Brugeren med id=" . $deluserid . " slettes!!!";
+        $user->delete($deluserid);
+        Redirect::to('/admin/tickets/');
+    }
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $userID         = $_POST['userID'];
     $navn           = $_POST['navn'];
@@ -87,17 +100,22 @@ $updatedata = $user->getInfo(Input::get('id'));
                                 </div>
                                 <div class="form-group form-row text-center">
                                     <div class="col">
-                                    <button type="submit" class="btn btn-outline-success full-width">Opdater bruger</button>
+                                        <button type="submit" class="btn btn-outline-success full-width">Opdater bruger</button>
                                     </div>
                                     <div class="col">
-                                        <a class="btn btn-outline-danger full-width" href="/admin/bruger/">Tilbage</a>
+                                        <a class="btn btn-outline-danger full-width" href="/admin/bruger/opdaterBruger.php?action=delete&id=<?php echo $updatedata['userID']; ?>">Slet bruger</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="btn btn-outline-warning full-width" href="/admin/bruger/">Tilbage</a>
                                     </div>
                                 </div>
                             </fieldset>
                         </form>
 
-                        <footer class="text-center">&copy; Aarhus Tech SKP <?php echo date('Y'); ?> - Udviklet af Benjamin Jørgensen</footer>
-                        <footer class="text-center">Version <?php echo Config::get('system_info/version'); ?></footer>
+                        <footer class="text-center" style="color: white;">© Aarhus Tech SKP 2018</footer>
+                        <footer class="text-center" style="color: white;">Udviklet af elever og instruktører SKP Data IT</footer>
+                        <footer class="text-center" style="color: white;">Version <?php echo Config::get('system_info/version'); ?></footer>
+
                         </blockquote>
                     </div>
                 </div>
