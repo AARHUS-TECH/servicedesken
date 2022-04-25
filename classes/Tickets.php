@@ -549,8 +549,6 @@
         public function getSortingResult($sql) 
         {               
             $result = $this->_db->custom_query($sql);
-
-            //echo "Modtaget: $sql";
             
             foreach($result as $row) {
                 echo '<tr>';
