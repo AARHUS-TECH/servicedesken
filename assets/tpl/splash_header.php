@@ -21,11 +21,11 @@
                             <p class="text-center"><b>Logget ind som:</b> <?php echo $userdata['navn']; ?></p>
                             <form method="post" action="/">
                                 <fieldset>
-                                    <div class="form-group form-row text-center">
-                                        <div class="col">
+                                    <div class="form-group form-row text-center" style="padding-bottom: 0px; margin-bottom: 0px;">
+                                        <div class="col" style="margin-bottom: 16px;">
                                             <a class="btn btn-outline-success full-width" href="/admin/tickets/">Ticket systemet</a>
                                         </div>
-                                        <div class="col">
+                                        <div class="col" style="margin-bottom: 16px;">
                                             <a class="btn btn-outline-success full-width" href="http://inventar.ats-skpdatait.dk/" target="_inventar_window" title="Dette åbner et nyt vindue.">Inventar systemet</a>
                                         </div>
                                     </div>
