@@ -7,9 +7,9 @@ $searchtext = ($_REQUEST['searchtext'])?$_REQUEST['searchtext']:"";
 $scope = ($_REQUEST['scope'])?$_REQUEST['scope']:"";
 
 
-echo "searchtext: $searchtext<br/>";
-echo "scope: $scope<br/>";
-echo "Søgeresultat<br />";
+//echo "searchtext: $searchtext<br/>";
+//echo "scope: $scope<br/>";
+//echo "Søgeresultat<br />";
 
 $sql = "SELECT * FROM servicedesk_sager 
             WHERE produkt_navn LIKE '%$searchtext%' 
@@ -19,7 +19,7 @@ $sql = "SELECT * FROM servicedesk_sager
             ORDER BY modtager_dato DESC
         ";
 
-echo $sql;
+//echo $sql;
 
 include_once "../../assets/tpl/cases_header.php";
 $ticket->getSortingResult($sql);
