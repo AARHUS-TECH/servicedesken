@@ -25,6 +25,7 @@ class Database {
         }
     }
 
+
     /**
     * custom query ,update,delete,insert,or fetch, joining multiple table etc, aritmathic etc
     * @param  string $sql  custom query
@@ -57,6 +58,7 @@ class Database {
         $this->pdo->beginTransaction();
     }
 
+
     /**
      * commit the transaction.
      */
@@ -66,6 +68,7 @@ class Database {
         $this->pdo->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
     }
 
+
     /**
      * rollback the transaction.
      */
@@ -74,7 +77,6 @@ class Database {
         $this->pdo->rollBack();
         $this->pdo->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
     }
-
 
 
     /**
@@ -94,6 +96,7 @@ class Database {
         return $obj;
     }
 
+
     /**
     * fetch all data
     * @param  string $table table name
@@ -106,6 +109,8 @@ class Database {
         $sel->setFetchMode( PDO::FETCH_OBJ );
         return $sel;
     }
+
+
     /**
     * fetch multiple row
     * @param  string $table table name
@@ -122,6 +127,7 @@ class Database {
         $sel->setFetchMode( PDO::FETCH_OBJ );
         return $sel;
     }
+
 
     /**
     * fetch row with condition
@@ -154,6 +160,7 @@ class Database {
         $sel->setFetchMode( PDO::FETCH_OBJ );
         return  $sel;
     }
+
 
     /**
     * fetch row with condition
@@ -188,6 +195,7 @@ class Database {
         $sel->setFetchMode( PDO::FETCH_OBJ );
         return  $sel;
     }
+
 
     /**
     * check if there is exist data
@@ -224,6 +232,8 @@ class Database {
             return false;
         }
     }
+
+
     /**
     * search data
     * @param  string $table table name
@@ -259,6 +269,7 @@ class Database {
         return  $sel;
     }
 
+
     /**
      * get last insert id
      * @return int last insert id
@@ -267,6 +278,7 @@ class Database {
     {
         return $this->pdo->lastInsertId();
     }
+
 
     /**
     * insert data to table
@@ -293,6 +305,7 @@ class Database {
 
     }
 
+
     /**
     * update record
     * @param  string $table table name
@@ -315,6 +328,7 @@ class Database {
         $ins->execute( $data );
     }
 
+
     /**
     * delete record
     * @param  string $table table name
@@ -326,6 +340,7 @@ class Database {
         $sel = $this->pdo->prepare("Delete from $table where $where=?" );
         $sel->execute( $data );
     }
+
 
     public function __destruct() {
     $this->pdo = null;
