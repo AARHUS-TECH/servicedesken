@@ -19,7 +19,7 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 - [x] Bootstrap opdateres til seneste 4.0.0.
 - [x] Modtager findes ikke i databasen! fejl som stopper Opdater sagsiden.
 - [ ] Der mangler en funktion som håndterer når elever slettes fra systemet, eks. når de meldes ud af SKP. Hænger sammen med fejlen Modtager findes ikke i databasen!. Rettes til at gives beskeden: Tidligere elev.
-- [ ] Sidernes header skal have hvid tekst, så man kan læse det
+- [x] Sidernes header skal have hvid tekst, så man kan læse det
 - [ ] Tabellens hoved laves sort med tynd grøn border, som de andre grafiske elementer.
 - [x] Sortering af tickets på siden Lukkede sager rettes til seneste først.
 
