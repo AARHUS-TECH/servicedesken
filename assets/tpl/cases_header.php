@@ -18,7 +18,7 @@
         <?php echo Errors::getSuccessMessage('dashboard_success'); ?>
 
         <div class="row">
-            <div class="card border-success col-md-12">
+            <div class="card border-success col-md-12" style="margin-bottom: 70px;">
                 <div class="card-body">
                     <h3 class="text-center" style="color: whitesmoke;">SERVICEDESKEN - TICKET SYSTEM</h3>
                     <blockquote class="card-blockquote">
