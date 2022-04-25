@@ -76,7 +76,12 @@
 
 
         public function delete($id) {
-            $this->_db->delete('servicedesk_bruger', 'id', $id);
+            //$this->_db->delete('servicedesk_bruger', 'id', $id);
+
+            $sql = "DELETE FROM servicedesk_bruger WHERE userID='$id' LIMIT 1";
+            echo $sql;
+
+            $result = $this->_db->custom_query($sql);
         }
 
 
