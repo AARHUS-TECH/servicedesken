@@ -3,7 +3,7 @@
                                     </div>
                                 </fieldset>
                             </form>
-                            <footer class="text-center">© Aarhus Tech SKP 2018-2021</footer>
+                            <footer class="text-center">© Aarhus Tech SKP 2018-2022</footer>
                             <footer class="text-center">Udviklet af elever og instruktører SKP Data IT</footer>
                             <footer class="text-center">Version <?php echo Config::get('system_info/version'); ?></footer>
                             </blockquote>
