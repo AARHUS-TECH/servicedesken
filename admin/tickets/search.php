@@ -15,7 +15,9 @@ $sql = "SELECT * FROM servicedesk_sager
             WHERE produkt_navn LIKE '%$searchtext%' 
             OR produkt_model LIKE '%$searchtext%' 
             OR kontakt_navn LIKE '%$searchtext%' 
-            OR produkt_fejlbeskrivelse LIKE '%$searchtext%'";
+            OR produkt_fejlbeskrivelse LIKE '%$searchtext%' 
+            ORDER BY modtager_dato DESC
+        ";
 
 echo $sql;
 
