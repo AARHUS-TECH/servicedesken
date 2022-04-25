@@ -20,9 +20,9 @@
         <div class="row">
             <div class="card border-success col-md-12">
                 <div class="card-body">
-                    <h3 class="text-center">SERVICEDESKEN - TICKET SYSTEM</h3>
+                    <h3 class="text-center" style="color: whitesmoke;">SERVICEDESKEN - TICKET SYSTEM</h3>
                     <blockquote class="card-blockquote">
-                        <p class="text-center"><b>Logget ind som:</b> <?php echo $userdata['navn']; ?></p>
+                        <p class="text-center" style="color: whitesmoke;"><b>Logget ind som:</b> <?php echo $userdata['navn']; ?></p>
                         <form method="post" action="" name="form1" id="form1">
                             <fieldset>
                                 <div class="form-group form-row text-center">
