@@ -68,27 +68,28 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>Softwaren bliver brugt af servicedesken til at lave tickets for indleverede opgaver.</p>
 <p>Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Rettelser der ønskes udført</h1>
 <ul>
 <li>[x] Der findes to mapper elev og admin, som indeholder meget af den samme kode.</li>
 <li>[x] Der er allerede taget højde for login rolle, den skal bruges direkte i koden og ikke som nu sende brugen i forskellige mapper.</li>
-<li>[ ] Tjek af databasen indholder den den rigtige information og de rigtige felter eller kan den optimeres.</li>
+<li>[x] Tjek af databasen indholder den den rigtige information og de rigtige felter eller kan den optimeres.</li>
 <li>[x] Visning af id er taget væk - det gør det sværere at backtracke opgaver for eleverne.</li>
 <li>[x] Eleverne har ikke adgang til at se afsluttede sager. Det rettes så elev rollen kan se men ikke redigere i lukkede sager.</li>
 <li>[x] Der vises ikke kundenavn på siden: Lukkede sager</li>
 <li>[ ] Serveren er ved at være gammel, trænger til opdatering.</li>
 <li>[x] Søge funktion som søger på beskrivelse, email og navn.</li>
+<li>[x] Søge funktion skal vise seneste først.</li>
 <li>[x] Der lavet noget til at sætte ønsket sortering. Funktionen laves færdig.</li>
 <li>[ ] Måske skulle man lave det Adaptive, så den også kan køre på elevernes mobil.</li>
 <li>[x] Bootstrap opdateres til seneste 4.0.0.</li>
 <li>[x] Modtager findes ikke i databasen! fejl som stopper Opdater sagsiden.</li>
 <li>[ ] Der mangler en funktion som håndterer når elever slettes fra systemet, eks. når de meldes ud af SKP. Hænger sammen med fejlen Modtager findes ikke i databasen!. Rettes til at gives beskeden: Tidligere elev.</li>
-<li>[ ] Sidernes header skal have hvid tekst, så man kan læse det</li>
+<li>[x] Sidernes header skal have hvid tekst, så man kan læse det</li>
 <li>[ ] Tabellens hoved laves sort med tynd grøn border, som de andre grafiske elementer.</li>
-<li>[ ] Sortering af tickets på siden Lukkede sager rettes til seneste først.</li>
+<li>[x] Sortering af tickets på siden Lukkede sager rettes til seneste først.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Systemet som kører servicedesken</h1>
 <p>cat /etc/*-release</p>
 <p>PRETTY_NAME="Debian GNU/Linux 9 (stretch)" NAME="Debian GNU/Linux" VERSION_ID="9" VERSION="9 (stretch)" ID=debian HOME_URL="https://www.debian.org/" SUPPORT_URL="https://www.debian.org/support" BUG_REPORT_URL="https://bugs.debian.org/"</p>

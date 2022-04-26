@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "bcdefgirstu",
   1: "cdeirstu",
   2: "bcdfgirsu",
-  3: "s"
+  3: "is"
 };
 
 var indexSectionNames =
