@@ -493,15 +493,8 @@
             foreach($result as $row) {
                 $modtagerdata = $this->_user->getInfo( $row->modtagerID );
 
-                if($row->repareretID)
-                    $repareretdata = $this->_user->getInfo( $row->repareretID );
-                else
-                    $repareretdata = array( 'navn'  => '&nbsp;' );
-
-                if($row->repareret_beskrivelse)
-                    $repareret_beskrivelse = $row->repareret_beskrivelse;
-                else
-                    $repareret_beskrivelse = '';
+                $repareretdata         = ( $row->repareretID )?$this->_user->getInfo( $row->repareretID ):array( 'navn'  => '&nbsp;' );
+                $repareret_beskrivelse = ( $row->repareret_beskrivelse )?$row->repareret_beskrivelse:'';
 
                 if($row->repareret_dato && strtotime($row->repareret_dato) != 0 ) 
                 {
