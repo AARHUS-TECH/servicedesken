@@ -1,8 +1,20 @@
 ﻿<?php
+/**
+ * This file is part of the ATS DataIT Servicedesk Ticketsystem package.
+ *
+ * @file        admin/index.php
+ * @author      Benjamin Jørgensen <bj@dunkstormen.dk>
+ * @copyright   AARHUS TECH DataIT Skoleoplæring 2017-2022
+ * @license     MIT, please view the LICENSE file
+ * 
+ * @brief       Admin login page an folder catch all
+ */
+
+
+
 require_once('../core/init.php');
 
 $user = new User();
-
 
 if(!Session::exists('userID')) {
     Session::flash('index_error', 'Du skal være logget ind for at kunne tilgå denne side!');
