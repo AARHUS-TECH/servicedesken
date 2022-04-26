@@ -12,7 +12,6 @@ if(Session::exists('userID')) {
     Redirect::to('/');
 }
 
-
 if ($_GET['action'] === "delete")
 {
     $deluserid = $_GET['id'];
@@ -102,8 +101,11 @@ $updatedata = $user->getInfo(Input::get('id'));
                                     <div class="col">
                                         <button type="submit" class="btn btn-outline-success full-width">Opdater bruger</button>
                                     </div>
+                                    <script type="javascript">
+
+                                    </script>
                                     <div class="col">
-                                        <a class="btn btn-outline-danger full-width" href="/admin/bruger/opdaterBruger.php?action=delete&id=<?php echo $updatedata['userID']; ?>">Slet bruger</a>
+                                        <a class="btn btn-outline-danger full-width" onclick="if (confirm("Er du sikker på at du vil slette brugeren!") == true){document.href='/admin/bruger/opdaterBruger.php?action=delete&id=<?php echo $updatedata['userID']; ?>'}">Slet bruger</a>
                                     </div>
                                     <div class="col">
                                         <a class="btn btn-outline-warning full-width" href="/admin/bruger/">Tilbage</a>
