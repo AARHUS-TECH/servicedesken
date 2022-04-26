@@ -3,7 +3,7 @@
  * This file is part of the ATS DataIT Servicedesk Ticketsystem package.
  *
  * @file        User.php
- * @brief       Class handling config setting into globals
+ * @brief       Class handling actions setting into globals
  * @copyright   AARHUS TECH DataIT Skoleoplæring 2017-2022
  * @license     MIT, please view the LICENSE file
  * 
@@ -262,4 +262,3 @@ class User
     }
 
 }
-?>

@@ -1,5 +1,20 @@
 <?php
-class Tickets {
+/**
+ * This file is part of the ATS DataIT Servicedesk Ticketsystem package.
+ *
+ * @file        Config.php
+ * @author      Benjamin Jørgensen <bj@dunkstormen.dk>
+ * @author      Karsten Reitan Sørensen <krs@aarhustech.dk>
+ * @copyright   AARHUS TECH DataIT Skoleoplæring 2017-2022
+ * @license     MIT, please view the LICENSE file
+ * 
+ * @brief       Class handling all ticket action
+ */
+
+
+
+class Tickets 
+{
     private $_db;
     
     function __construct() 
@@ -445,6 +460,4 @@ class Tickets {
         }
     }
 
-};
-
-?>
+}
