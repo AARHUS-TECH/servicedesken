@@ -1,14 +1,19 @@
 <?php
-
 /**
- * Beskrivelse kommer snarest
+ * This file is part of the ATS DataIT Servicedesk Ticketsystem package.
  *
+ * @file        Config.php
  * @author      Benjamin Jørgensen <bj@dunkstormen.dk>
- * @copyright   Aarhus Tech SKP 2017
+ * @copyright   AARHUS TECH DataIT Skoleoplæring 2017-2022
+ * @license     MIT, please view the LICENSE file
+ * 
+ * @brief       Class handling config setting into globals
  */
 
-class Input {
-    public static function exists($type = 'post') {
+class Input 
+{
+    public static function exists($type = 'post') 
+    {
         switch($type) {
             case 'post':
                 return (!empty($_POST)) ? true : false;
@@ -22,7 +27,9 @@ class Input {
         }
     }
 
-    public static function get($item) {
+
+    public static function get($item) 
+    {
         if(isset($_POST[$item])) {
             return $_POST[$item];
         } else if(isset($_GET[$item])) {
