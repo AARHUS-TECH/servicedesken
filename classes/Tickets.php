@@ -491,30 +491,22 @@
             $result = $this->_db->custom_query($sql);
 
             foreach($result as $row) {
-                $modtagerdata = $this->_user->getInfo($row->modtagerID);
+                $modtagerdata = $this->_user->getInfo( $row->modtagerID );
 
-                if($row->repareretID) {
-                    $repareretdata = $this->_user->getInfo($row->repareretID);
-                } else {
-                    $repareretdata = array(
-                        'navn'  => '&nbsp;'
-                    );
-                }
+                if($row->repareretID)
+                    $repareretdata = $this->_user->getInfo( $row->repareretID );
+                else
+                    $repareretdata = array( 'navn'  => '&nbsp;' );
 
-                if($row->repareret_beskrivelse) {
+                if($row->repareret_beskrivelse)
                     $repareret_beskrivelse = $row->repareret_beskrivelse;
-                } else {
+                else
                     $repareret_beskrivelse = '';
-                }
 
-                if($row->repareret_dato) {
-                    if(strtotime($row->repareret_dato) != 0) {
-                        $repareret_dato = date('d-m-Y', strtotime($row->repareret_dato));
-                        $repareret_dato2 = date('Y-m-d\TH:i', strtotime($row->repareret_dato));
-                    } else {
-                        $repareret_dato  = NULL;
-                        $repareret_dato2 = NULL;
-                    }
+                if($row->repareret_dato && strtotime($row->repareret_dato) != 0 ) 
+                {
+                    $repareret_dato = date('d-m-Y', strtotime($row->repareret_dato));
+                    $repareret_dato2 = date('Y-m-d\TH:i', strtotime($row->repareret_dato));
                 } else {
                     $repareret_dato  = NULL;
                     $repareret_dato2 = NULL;
