@@ -7,33 +7,6 @@
             $this->_user = new User();
         }
 
-        public static function getDiscordKategori($value) {
-            switch ($value) {
-                case 1:
-                    return 'Servicedesk';
-                    break;
-                case 2:
-                    return 'Elektronik';
-                    break;
-                case 3:
-                    return 'Programmør';
-                    break;
-                case 4:
-                    return 'Techdesk';
-                    break;
-                case 5:
-                    return 'Ekstern';
-                    break;
-                case 1000:
-                    return 'Andet';
-                    break;
-                
-                default:
-                    return 'Ukendt';
-                    break;
-            }
-        }
-
 
         public static function discordNotification($kategori, $prioritet) {
             // Replace the URL with your own webhook url
