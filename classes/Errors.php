@@ -2,7 +2,7 @@
 /**
  * This file is part of the ATS DataIT Servicedesk Ticketsystem package.
  *
- * @file        Database.php
+ * @file        Error.php
  * @brief       Class handling all actions to from the database
  * @copyright   AARHUS TECH DataIT Skoleoplæring 2017-2022
  * @license     MIT, please view the LICENSE file
