@@ -27,7 +27,8 @@ class Tickets {
         );
 
         $this->_db->insert('servicedesk_sager', $data);
-        Self::discordNotification($kategori, $priortet);
+        //Self::discordNotification($kategori, $priortet);
+
         Session::flash('dashboard_success', 'Sagen blev oprettet med succes!');
         Redirect::to('/admin/tickets/');
     }
