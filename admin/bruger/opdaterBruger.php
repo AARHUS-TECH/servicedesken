@@ -105,7 +105,7 @@ $updatedata = $user->getInfo(Input::get('id'));
 
                                     </script>
                                     <div class="col">
-                                        <a class="btn btn-outline-danger full-width" onclick="if (confirm("Er du sikker på at du vil slette brugeren!") == true){document.href='/admin/bruger/opdaterBruger.php?action=delete&id=<?php echo $updatedata['userID']; ?>'}">Slet bruger</a>
+                                        <a class="btn btn-outline-danger full-width" onclick="if (confirm('Er du sikker på at du vil slette brugeren!') == true){document.location='/admin/bruger/opdaterBruger.php?action=delete&id=<?php echo $updatedata['userID']; ?>'}">Slet bruger</a>
                                     </div>
                                     <div class="col">
                                         <a class="btn btn-outline-warning full-width" href="/admin/bruger/">Tilbage</a>
