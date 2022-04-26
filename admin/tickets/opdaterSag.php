@@ -52,9 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $userdata = $user->getInfo(Session::get('userID'));
-
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
