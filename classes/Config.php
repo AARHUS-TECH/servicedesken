@@ -1,11 +1,16 @@
 <?php
-
 /**
- * Beskrivelse kommer snarest
+ * This file is part of the ATS DataIT Servicedesk Ticketsystem package.
  *
+ * @file        Config.php
  * @author      Benjamin Jørgensen <bj@dunkstormen.dk>
- * @copyright   Aarhus Tech SKP 2017
+ * @copyright   AARHUS TECH DataIT Skoleoplæring 2017-2022
+ * @license     MIT, please view the LICENSE file
+ * 
+ * @brief       Class handling config setting into globals
  */
+
+
 
 class Config {
     public static function get($path = null) {
