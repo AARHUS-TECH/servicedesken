@@ -1,13 +1,21 @@
 <?php
-
 /**
- * Beskrivelse kommer snarest
+ * This file is part of the ATS DataIT Servicedesk Ticketsystem package.
  *
+ * @file        Database.php
+ * @brief       Class handling all actions to from the database
+ * @copyright   AARHUS TECH DataIT Skoleoplæring 2017-2022
+ * @license     MIT, please view the LICENSE file
+ * 
  * @author      Benjamin Jørgensen <bj@dunkstormen.dk>
- * @copyright   Aarhus Tech SKP 2017
+ * @author      Karsten Reitan Sørensen <krs@aarhustech.dk>
+ * @bugs        No knows bugs
  */
 
-class Database {
+
+
+class Database 
+{
 
     private $pdo;
 
