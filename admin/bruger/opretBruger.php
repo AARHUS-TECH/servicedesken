@@ -89,4 +89,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </fieldset>
                         </form>
 
-                        <?php require_once("../../assets/tpl/cases_footer.php");  ?>
+<?php require_once("../../assets/tpl/cases_footer.php");  ?>
