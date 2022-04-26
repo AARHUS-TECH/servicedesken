@@ -44,9 +44,10 @@ class User
     }
 
 
-    public function opretBruger($navn, $brugernavn, $password = null, $user_level) 
+    public function opretBruger( $navn, $brugernavn, $password = null, $user_level ) 
     {
-        if(!empty($navn) && !empty($brugernavn) && isset($password)) {
+        if(!empty($navn) && !empty($brugernavn) && isset($password)) 
+        {
             if($this->exists($brugernavn)) {
                 Session::flash('bruger_error', 'Der eksisterer allerede en bruger med den valgte brugernavn!');
                 Redirect::to('/admin/bruger/opretBruger.php');
@@ -70,7 +71,7 @@ class User
     }
 
 
-    public function update($userID, $navn, $brugernavn, $password = null, $user_level) 
+    public function update( $userID, $navn, $brugernavn, $password = null, $user_level ) 
     {
         if(!$password == null) {
             $data = array(
@@ -94,7 +95,7 @@ class User
     }
 
 
-    public function delete($id) 
+    public function delete( $id ) 
     {
         //$this->_db->delete('servicedesk_bruger', 'id', $id);
 
@@ -113,7 +114,7 @@ class User
     }
 
 
-    private function login($value1, $value2) 
+    private function login( $value1, $value2 ) 
     {
         $sql = "SELECT userID, password FROM servicedesk_bruger WHERE brugernavn='$value1' LIMIT 1";
             
@@ -147,13 +148,14 @@ class User
     }
 
 
-    public function getInfo($value) 
+    public function getInfo( $value ) 
     {
         if(is_numeric($value)) {
             $sql = "SELECT * FROM servicedesk_bruger WHERE userID='$value'";
             $result = $this->_db->custom_query($sql);
             
-            foreach($result as $row) {
+            foreach($result as $row) 
+            {
                 $userdata = array(
                     'userID' => $row->userID,
                     'navn' => $row->navn,
@@ -161,6 +163,7 @@ class User
                     'user_level' => $row->user_level,
                 );
             }
+
             return $userdata;
         } else {
             die('Value given is not numeric! getInfo(> ! <)');
