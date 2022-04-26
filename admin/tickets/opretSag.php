@@ -20,10 +20,7 @@ $ticket = new Tickets();
 if(!Session::exists('userID')) {
     Session::flash('index_error', 'Du skal være logget ind for at kunne tilgå denne side!');
     Redirect::to('/');
-}/* else if (Session::exists('userID') && !$user->isAdmin(Session::get('userID'))) {
-    Session::flash('dashboard_error', 'Du skal være admin for at kunne tilgå denne side!');
-    Redirect::to('/elev/');
-}*/
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $modtagerID             = Input::get('modtagerID');
