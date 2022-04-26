@@ -2,12 +2,12 @@
 /**
  * This file is part of the ATS DataIT Servicedesk Ticketsystem package.
  *
- * @file        Config.php
+ * @file        opretSag.php
  * @author      Benjamin Jørgensen <bj@dunkstormen.dk>
  * @copyright   AARHUS TECH DataIT Skoleoplæring 2017-2022
  * @license     MIT, please view the LICENSE file
  * 
- * @brief       Class handling config setting into globals
+ * @brief       Page for making new ticket
  */
 
 
