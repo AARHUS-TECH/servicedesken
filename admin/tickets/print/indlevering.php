@@ -125,7 +125,7 @@ $indlevDato = date('d-m-Y', strtotime($currentTicket['modtagerDato']));
         <p class="lead">Betingelser for indlevering:</p>
         <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
             <?php 
-                $betingelser = file_get_contents('../../../betingelser.html');
+                $betingelser = file_get_contents('betingelser.html');
                 echo $betingelser;
             ?>
         </p>
