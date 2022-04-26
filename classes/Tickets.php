@@ -485,15 +485,13 @@
         }
 
 
-        public function getTicket($id) {
+        public function getTicket($id) 
+        {
             $sql = "SELECT * FROM servicedesk_sager INNER JOIN servicedesk_kategorier ON servicedesk_sager.sags_kategori = servicedesk_kategorier.id WHERE sagsID = $id";
             $result = $this->_db->custom_query($sql);
 
             foreach($result as $row) {
                 $modtagerdata = $this->_user->getInfo($row->modtagerID);
-                if(!$modtagerdata) {
-                    echo('Modtager findes ikke i databasen! (Modtager ID: ' . $row->modtagerID . ')');
-                }
 
                 if($row->repareretID) {
                     $repareretdata = $this->_user->getInfo($row->repareretID);
@@ -523,7 +521,7 @@
                 }
 
                 $ticketData = array(
-                    'modtagerNavn'              => $modtagerdata['navn'],
+                    'modtagerNavn'              => (!$modtagerdata)?"Modtager findes ikke i databasen!":$modtagerdata['navn'],
                     'modtagerID'                => $row->modtagerID,
                     'modtagerDato'              => date('d-m-Y', strtotime($row->modtager_dato)),
                     'kontaktNavn'               => $row->kontakt_navn,
