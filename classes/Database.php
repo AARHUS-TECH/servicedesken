@@ -27,7 +27,9 @@ class Database
             $this->pdo->exec("SET CHARACTER SET " . Config::get('database/charset'));
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo->query("set names " . Config::get('database/charset'));
-        } catch (PDOException $e)
+        } 
+        
+        catch (PDOException $e)
         {
             die("[DATABASE ERROR] " . $e->getMessage());
         }
@@ -40,19 +42,20 @@ class Database
     * @param  array $data associative array
     * @return array  recordset
     */
-    public function custom_query( $sql,$data=null) {
-        if ($data!==null) {
-        $dat=array_values($data);
-        }
+    public function custom_query( $sql, $data=null ) 
+    {
+        if ($data!==null)
+            $dat=array_values($data);
 
         $sel = $this->pdo->prepare( $sql );
-        if ($data!==null) {
+
+        if ($data!==null)
             $sel->execute($dat);
-        } else {
+        else
             $sel->execute();
-        }
         
         $sel->setFetchMode( PDO::FETCH_OBJ );
+
         return $sel;
     }
 
@@ -94,27 +97,31 @@ class Database
     * @param  string $val value column
     * @return array recordset
     */
-    public function fetch_single_row($table,$col,$val)
+    public function fetch_single_row( $table, $col, $val )
     {
         $nilai=array($val);
+
         $sel = $this->pdo->prepare("SELECT * FROM $table WHERE $col=?");
         $sel->execute($nilai);
         $sel->setFetchMode( PDO::FETCH_OBJ );
+
         $obj = $sel->fetch();
+
         return $obj;
     }
 
 
     /**
-    * fetch all data
-    * @param  string $table table name
-    * @return array recordset
+    * @name     fetch_all data
+    * @param    string table name
+    * @return   array recordset
     */
-    public function fetch_all($table)
+    public function fetch_all( $table )
     {
         $sel = $this->pdo->prepare("SELECT * FROM $table");
         $sel->execute();
         $sel->setFetchMode( PDO::FETCH_OBJ );
+
         return $sel;
     }
 
@@ -125,14 +132,17 @@ class Database
     * @param  array $dat specific column selection
     * @return array recordset
     */
-    public function fetch_col($table,$dat)
+    public function fetch_col( $table, $dat )
     {
         if( $dat !== null )
-        $cols= array_values( $dat );
+            $cols= array_values( $dat );
+        
         $col=implode(', ', $cols);
+        
         $sel = $this->pdo->prepare("SELECT $col from $table");
         $sel->execute();
         $sel->setFetchMode( PDO::FETCH_OBJ );
+        
         return $sel;
     }
 
@@ -146,8 +156,8 @@ class Database
     */
     public function fetch_multi_row($table,$col,$where)
     {
-
         $data = array_values( $where );
+
         //grab keys
         $cols=array_keys($where);
         $colum=implode(', ', $col);
@@ -157,15 +167,15 @@ class Database
         }
 
         $jum=count($where);
-        if ($jum>1) {
+        if ($jum>1)
             $im=implode('? and  ', $mark);
-             $sel = $this->pdo->prepare("SELECT $colum from $table WHERE $im");
-        } else {
-          $im=implode('', $mark);
-             $sel = $this->pdo->prepare("SELECT $colum from $table WHERE $im");
-        }
+        else
+            $im=implode('', $mark);
+
+        $sel = $this->pdo->prepare("SELECT $colum from $table WHERE $im");
         $sel->execute( $data );
         $sel->setFetchMode( PDO::FETCH_OBJ );
+        
         return  $sel;
     }
 
@@ -179,10 +189,10 @@ class Database
     * @param  array $where what column will be the condition
     * @return array recordset
     */
-    public function fetch_multi_row_order($table,$col,$where,$order,$index)
+    public function fetch_multi_row_order( $table, $col, $where, $order, $index )
     {
-
         $data = array_values( $where );
+
         //grab keys
         $cols=array_keys($where);
         $colum=implode(', ', $col);
@@ -192,15 +202,15 @@ class Database
         }
 
         $jum=count($where);
-        if ($jum>1) {
+        if ($jum>1)
             $im=implode('? and  ', $mark);
-             $sel = $this->pdo->prepare("SELECT $colum from $table WHERE $im ORDER BY $order $index");
-        } else {
-          $im=implode('', $mark);
-             $sel = $this->pdo->prepare("SELECT $colum from $table WHERE $im ORDER BY $order $index");
-        }
+        else
+            $im=implode('', $mark);
+
+        $sel = $this->pdo->prepare("SELECT $colum from $table WHERE $im ORDER BY $order $index");
         $sel->execute( $data );
         $sel->setFetchMode( PDO::FETCH_OBJ );
+        
         return  $sel;
     }
 
@@ -211,7 +221,8 @@ class Database
     * @param  array $dat array list of data to find
     * @return true or false
     */
-    public function check_exist($table,$dat) {
+    public function check_exist( $table, $dat ) 
+    {
 
         $data = array_values( $dat );
        //grab keys
@@ -231,14 +242,12 @@ class Database
           $im=implode('', $mark);
              $sel = $this->pdo->prepare("SELECT $col from $table WHERE $im");
         }
+
         $sel->execute( $data );
         $sel->setFetchMode( PDO::FETCH_OBJ );
-        $jum=$sel->rowCount();
-        if ($jum>0) {
-            return true;
-        } else {
-            return false;
-        }
+        
+        $jmp = ( $sel->rowCount() > 0 )?true:false;
+        return $jmp;
     }
 
 
@@ -249,12 +258,15 @@ class Database
     * @param  array $where where condition
     * @return array recordset
     */
-    public function search($table,$col,$where) {
+    public function search( $table, $col, $where ) 
+    {
         $data = array_values( $where );
+
         foreach ($data as $key) {
            $val = '%'.$key.'%';
            $value[]=$val;
         }
+
        //grab keys
         $cols=array_keys($where);
         $colum=implode(', ', $col);
@@ -263,6 +275,7 @@ class Database
           $keys=$key." LIKE ?";
           $mark[]=$keys;
         }
+
         $jum=count($where);
         if ($jum>1) {
             $im=implode(' OR  ', $mark);
@@ -274,6 +287,7 @@ class Database
 
         $sel->execute($value);
         $sel->setFetchMode( PDO::FETCH_OBJ );
+        
         return  $sel;
     }
 
@@ -293,7 +307,8 @@ class Database
     * @param  string $table table name
     * @param  array $dat   associative array 'column_name'=>'val'
     */
-    public function insert($table,$dat) {
+    public function insert( $table, $dat ) 
+    {
 
         if( $dat !== null )
         $data = array_values( $dat );
@@ -321,16 +336,17 @@ class Database
     * @param  string $id    primary key column name
     * @param  int $val   key value
     */
-    public function update($table,$dat,$id,$val) {
+    public function update( $table, $dat, $id, $val ) {
         if( $dat !== null )
-        $data = array_values( $dat );
+            $data = array_values( $dat );
+        
         array_push($data,$val);
+        
         //grab keys
         $cols=array_keys($dat);
         $mark=array();
-        foreach ($cols as $col) {
-        $mark[]=$col."=?";
-        }
+        foreach ($cols as $col) { $mark[]=$col."=?"; }
+        
         $im=implode(', ', $mark);
         $ins = $this->pdo->prepare("UPDATE $table SET $im where $id=?");
         $ins->execute( $data );
