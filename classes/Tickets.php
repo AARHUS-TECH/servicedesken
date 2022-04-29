@@ -43,7 +43,17 @@ class Tickets
 
         $this->_db->insert('servicedesk_sager', $data);
         Session::flash('dashboard_success', 'Sagen blev oprettet med succes!');
-        Redirect::to('/admin/tickets/');
+
+        // KRS GEtting the latest case number
+        $sql = "SELECT sagsID FROM `servicedesk_sager` ORDER BY sagsID DESC LIMIT 1";
+        $result = $this->_db->custom_query($sql);
+
+        foreach($result as $row) {
+            $lastIndex = $row->sagsID;
+            echo 'sagsID: ' . $lastIndex;
+        }
+
+        Redirect::to("/admin/tickets/opdaterSag.php?id=$lastIndex");
     }
 
 
