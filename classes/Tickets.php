@@ -243,7 +243,7 @@ class Tickets
 
     public function getSelectedUsers( $ticketId ) 
     {
-        $sql = "SELECT * FROM servicedesk_bruger";
+        $sql = "SELECT * FROM servicedesk_bruger ORDER BY navn ASC";
         $result = $this->_db->custom_query($sql);
 
         $sql2 = "SELECT * FROM servicedesk_sager WHERE sagsID = $ticketId LIMIT 1";
