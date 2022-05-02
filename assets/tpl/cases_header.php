@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Servicedesken | Aarhus Tech SKP</title>
+    <title>Servicedesken | AARHUS TECH Skoleoplæring</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://kit.fontawesome.com/6933752704.js" crossorigin="anonymous"></script>
 

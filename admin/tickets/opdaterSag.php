@@ -57,7 +57,7 @@ $userdata = $user->getInfo(Session::get('userID'));
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Servicedesken | Aarhus Tech SKP</title>
+        <title>Servicedesken | AARHUS TECH Skoleoplæring</title>
 
         <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
@@ -128,18 +128,18 @@ $userdata = $user->getInfo(Session::get('userID'));
                                                 <input type="text" class="form-control" id="eksempelKontakTelefon" name="kontaktTelefon" placeholder="Kontaktpersonenens telefon nr." value="<?php echo $currentTicket['kontaktTlf']; ?>">
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputRepareretID">Udført af</label>
+                                                <label for="inputRepareretID">Udf&oslash;rt af</label>
                                                 <select class="form-control" id="inputRepareretID" name="repareretID" required>
                                                     <?php echo $ticket->getSelectedUsers(Input::get('id')); ?>
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputRepareretDato">Udførelses dato</label>
+                                                <label for="inputRepareretDato">Udf&oslash;relses dato</label>
                                                 <br />
                                                 <input type="datetime-local" id="inputRepareretDato" name="repareretDato" value="<?php echo $currentTicket['repareretDato2']; ?>">
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputRepareretBeskrivelse">Beskrivelse af udført arbejde</label>
+                                                <label for="inputRepareretBeskrivelse">Beskrivelse af udf&oslash;rt arbejde</label>
                                                 <textarea rows="6" type="text" class="form-control" id="eksempelRepareretBeskrivelse" name="repareretBeskrivelse" placeholder="Reparations beskrivelse"><?php echo $currentTicket['repareretBeskrivelse']; ?></textarea>
                                             </div>
                                             <div class="form-group form-row">    

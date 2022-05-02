@@ -45,7 +45,7 @@ $userdata = $user->getInfo(Session::get('userID'));
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Servicedesken | Aarhus Tech SKP</title>
+        <title>Servicedesken | AARHUS TECH Skoleoplæring</title>
 
         <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
