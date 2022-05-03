@@ -1,4 +1,4 @@
-# Servicedesken ticketsystem
+# Servicedesk Ticket system
 
 Softwaren bliver brugt af servicedesken til at lave tickets for indleverede opgaver.
 
