@@ -1,8 +1,14 @@
 # Servicedesk Ticket system
 
-Softwaren bliver brugt af servicedesken til at lave tickets for indleverede opgaver.
+Softwaren bliver brugt af servicedesken til at lave tickets for indleverede opgaver. Der er mulighed for at indsætte brugere og holde styr over kundens kontakt oplysninger. 
 
-Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
+Er skrevet i / benytter:
+* PHP
+* HTML
+* CSS
+* Bootstrap
+* MySQL i form af MariaDB
+* PHPMyAdmin
 
 # Rettelser der ønskes udført
 - [x] Der findes to mapper elev og admin, som indeholder meget af den samme kode.
@@ -23,6 +29,7 @@ Softwaren er efterhånden ved at være gammel og trænger til en kærlig hånd.
 - [ ] Tabellens hoved laves sort med tynd grøn border, som de andre grafiske elementer.
 - [x] Sortering af tickets på siden Lukkede sager rettes til seneste først.
 - [x] Rettelse af meget gamle cron jobs <- Slettet
+- [x] Upload mappe bliver ikke brugt i koden <- Slettet
 
 # Systemet som kører servicedesken
     cat /etc/*-release
