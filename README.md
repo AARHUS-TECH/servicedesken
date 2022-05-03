@@ -7,6 +7,7 @@ Er skrevet i / benytter:
 * HTML
 * CSS
 * Bootstrap
+* JavaScript
 * MySQL i form af MariaDB
 * PHPMyAdmin
 
