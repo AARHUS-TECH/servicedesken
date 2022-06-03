@@ -14,7 +14,7 @@
 
 require_once('../../core/init.php');
 
-$user = new User();
+$user   = new User();
 $ticket = new Tickets();
 
 if(!Session::exists('userID')) {
@@ -43,7 +43,7 @@ if ($_REQUEST['sorting']) # change currency on user request
     }
     elseif ($sorting == "priortet") 
     {
-        $sql = "ORDER BY servicedesk_sager.priortet $direction, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC";
+        $sql = "ORDER BY servicedesk_sager.priortet $direction, servicedesk_sager.status ASC, servicedesk_sager.sags_kategori ASC, servicedesk_sager.sagsID DESC";
     }    
     elseif ($sorting == "status") 
     {
