@@ -11,17 +11,17 @@ session_start();
 
 $GLOBALS['config'] = array(
     'database' => array(
-        'dsn'       => 'mysql:host=127.0.0.1;dbname=skp_servicedesk',       # Database Host
-        'username'  => 'skp',                                           # Database Brugernavn
-        'password'  => 'SKP2017!',                                              # Database Password
-        'charset'   => 'utf8'                                           # Database Charset
+        'dsn'       => 'mysql:host=127.0.0.1;dbname=<DBNAME>',      # Database Host
+        'username'  => '<USERNAME>',                                # Database Brugernavn
+        'password'  => '<PASSWORD>',                                # Database Password
+        'charset'   => 'utf8'                                       # Database Charset
     ),
     'system_info' => array(
-        'version'   => '1.3.0'
+        'version'   => '1.2.0'
     ),
     'servicedesk' => array(
-        'telefon'   => '22234590',
-        'email'     => 'skp.it@edu.aarhustech.dk'
+        'telefon'   => '<PHONENUMBER>',
+        'email'     => '<EMAIL>'
     )
 );
 
