@@ -42,7 +42,7 @@ class Tickets
         );
 
         try {
-        $this->_db->insert('servicedesk_sager', $data);
+            $this->_db->insert('servicedesk_sager', $data);
         } catch (Exception $e) {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
@@ -75,14 +75,17 @@ class Tickets
             'produkt_model'             => $produktModel,
             'produkt_antal'             => 1,
             'produkt_fejlbeskrivelse'   => $produktFejlbeskrivelse,
-            'repareretID'               => $repareretID,
-            'repareret_dato'            => $repareretDato,
+            'repareretID'               => intval($repareretID),
+            'repareret_dato'            => ( ( isset($repareretDato) && $repareretDato != ""  )?$repareretDato:NULL ),
             'repareret_beskrivelse'     => $repareretBeskrivelse
         );
 
-        $this->_db->update('servicedesk_sager', $data, 'sagsID', $sagsID);
+        try {
+            $this->_db->update('servicedesk_sager', $data, 'sagsID', $sagsID);
+        } catch (Exception $e) {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
-
+        }
+        
         Session::flash('dashboard_success', 'Sagen blev opdateret med succes!');
     }
 
