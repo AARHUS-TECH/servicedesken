@@ -41,10 +41,15 @@ class Tickets
             'produkt_fejlbeskrivelse'   => $produktFejlbeskrivelse
         );
 
+        try {
         $this->_db->insert('servicedesk_sager', $data);
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+
         Session::flash('dashboard_success', 'Sagen blev oprettet med succes!');
 
-        // KRS GEtting the latest case number
+        // KRS Getting the last case number, from the lastest entry
         $sql = "SELECT sagsID FROM `servicedesk_sager` ORDER BY sagsID DESC LIMIT 1";
         $result = $this->_db->custom_query($sql);
 
@@ -76,6 +81,7 @@ class Tickets
         );
 
         $this->_db->update('servicedesk_sager', $data, 'sagsID', $sagsID);
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
 
         Session::flash('dashboard_success', 'Sagen blev opdateret med succes!');
     }
