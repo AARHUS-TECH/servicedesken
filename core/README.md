@@ -17,7 +17,7 @@ $GLOBALS['config'] = array(
     'database' => array(
         'dsn'       => 'mysql:host=127.0.0.1;dbname=<DBNAME>',      # Database Host
         'username'  => '<USERNAME>',                                # Database Brugernavn
-        'password'  => '>PASSWORD>',                                # Database Password
+        'password'  => '<PASSWORD>',                                # Database Password
         'charset'   => 'utf8'                                       # Database Charset
     ),
     'system_info' => array(
