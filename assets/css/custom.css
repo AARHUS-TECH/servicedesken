@@ -1,6 +1,7 @@
 body {
     /*background: url('/assets/images/background.jpg') no-repeat center center fixed;*/
     background-size: cover;
+    background-color: #2B3E50; /*KRS: Matching Bootstrap*/
 }
 
 .card {
