@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sagsID                 = Input::get('sagsID');
 
     $ticket->update($kategori, $priortet, $produktNavn, $produktModel, $produktFejlbeskrivelse, $kontaktNavn, $kontaktEmail, $kontaktTelefon, $repareretID, $repareretDato, $repareretBeskrivelse, $status, $sagsID);
+
     Redirect::to('/admin/tickets/');
 }
 
