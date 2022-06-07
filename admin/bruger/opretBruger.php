@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         Redirect::to('/admin/bruger/opretBruger.php');
     }
 
-    $user->opretBruger($navn, $brugernavn, $adgangskode, $user_level);
+    $user->newUser($navn, $brugernavn, $adgangskode, $user_level);
 }
 ?>
 
