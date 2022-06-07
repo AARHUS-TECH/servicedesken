@@ -309,23 +309,23 @@ class Database
     */
     public function insert( $table, $dat ) 
     {
-
-        if( $dat !== null )
-        $data = array_values( $dat );
+        if( $dat !== null ) { $data = array_values( $dat ); };
+        
         //grab keys
         $cols=array_keys($dat);
         $col=implode(', ', $cols);
-
+        
         //grab values and change it value
         $mark=array();
         foreach ($data as $key) {
-          $keys='?';
-          $mark[]=$keys;
+            $keys='?';
+            $mark[]= "\"" . $key . "\"";
         }
+        
         $im=implode(', ', $mark);
+        
         $ins = $this->pdo->prepare("INSERT INTO $table ($col) values ($im)");
         $ins->execute( $data );
-
     }
 
 
@@ -345,7 +345,9 @@ class Database
         //grab keys
         $cols=array_keys($dat);
         $mark=array();
-        foreach ($cols as $col) { $mark[]=$col."=?"; }
+        foreach ($cols as $col) { 
+            $mark[]=$col."=?"; 
+        }
         
         $im=implode(', ', $mark);
         $ins = $this->pdo->prepare("UPDATE $table SET $im where $id=?");
