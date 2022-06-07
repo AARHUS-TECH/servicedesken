@@ -33,7 +33,7 @@ if ($_GET['action'] === "delete")
     {
         echo "Brugeren med id=" . $deluserid . " slettes!!!";
         $user->delete($deluserid);
-        Redirect::to('/admin/tickets/');
+        Redirect::to('/admin/bruger/');
     }
 }
 
