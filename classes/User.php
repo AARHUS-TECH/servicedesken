@@ -44,7 +44,7 @@ class User
     }
 
 
-    public function opretBruger( $navn, $brugernavn, $password = null, $user_level ) 
+    public function newUser( $navn, $brugernavn, $password = null, $user_level ) 
     {
         if(!empty($navn) && !empty($brugernavn) && isset($password)) 
         {
