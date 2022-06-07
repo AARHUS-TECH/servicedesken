@@ -47,20 +47,22 @@ class User
     public function newUser( $navn, $brugernavn, $password = null, $user_level ) 
     {
         if(!empty($navn) && !empty($brugernavn) && isset($password)) 
-        {
+        {   
+
             if($this->exists($brugernavn)) {
                 Session::flash('bruger_error', 'Der eksisterer allerede en bruger med den valgte brugernavn!');
                 Redirect::to('/admin/bruger/opretBruger.php');
             }
-            
-            $data = array(
+
+            $_data = array(
                 'navn'              => $navn,
                 'brugernavn'        => $brugernavn,  
                 'password'          => password_hash($password, PASSWORD_DEFAULT),
-                'user_level'        => $user_level
+                'user_level'        => $user_level,
             );
+            
+            $this->_db->insert('servicedesk_bruger', $_data);
 
-            $this->_db->insert('servicedesk_bruger', $data);
             Session::flash('dashboard_success', 'Brugeren <b>' . $navn . '</b> blev registreret i systemet!' );
             Redirect::to('/admin/bruger/');
         } else {
