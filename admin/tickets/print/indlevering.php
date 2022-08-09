@@ -141,9 +141,9 @@ $indlevDato = date('d-m-Y', strtotime($currentTicket['modtagerDato']));
         <table class="table">
         <tbody>
         <tr>
-          <td style="border: none; width: 48%;"><b>Kunde:</b></td>
+          <td style="border: none; width: 48%;">Dato: <span><?php echo $indlevDato; ?></span><br /><br /><b>Kunde:</b></td>
           <td style="border: none; width: 4%;">&nbsp;</td>
-          <td style="border: none; width: 48%;"><b>Godkendt af:</b></td>
+          <td style="border: none; width: 48%;">&nbsp;<br /><br /><b>Godkendt af:</b></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -153,7 +153,7 @@ $indlevDato = date('d-m-Y', strtotime($currentTicket['modtagerDato']));
         </tbody>
       </table>
 
-      <table class="table">
+      <!-- table class="table">
         <tbody>
         <tr>
           <td style="border: none; width: 48%;">Dato:</td>
@@ -161,7 +161,7 @@ $indlevDato = date('d-m-Y', strtotime($currentTicket['modtagerDato']));
           <td style="border: none; width: 48%;">Dato:</td>
         </tr>
         </tbody>
-      </table>
+      </table -->
       </div>
     </div>
     <!-- /.row -->
