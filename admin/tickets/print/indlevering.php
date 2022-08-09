@@ -143,12 +143,12 @@ $indlevDato = date('d-m-Y', strtotime($currentTicket['modtagerDato']));
         <tr>
           <td style="border: none; width: 48%;">Dato: <span><?php echo $indlevDato; ?></span><br /><br /><b>Kunde:</b></td>
           <td style="border: none; width: 4%;">&nbsp;</td>
-          <td style="border: none; width: 48%;">&nbsp;<br /><br /><b>Godkendt af:</b></td>
+          <td style="border: none; width: 48%;">&nbsp;<!-- br /><br /><b>Godkendt af:</b --></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
             <td style="border: none;">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td style="border: none;"></td>
         </tr>
         </tbody>
       </table>
