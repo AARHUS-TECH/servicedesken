@@ -4,6 +4,7 @@
  *
  * @file        Config.php
  * @author      Benjamin Jørgensen <bj@dunkstormen.dk>
+ * @author      Karsten Reitan Sørensen <krs@aarhustech.dk>
  * @copyright   AARHUS TECH DataIT Skoleoplæring 2017-2022
  * @license     MIT, please view the LICENSE file
  * 
