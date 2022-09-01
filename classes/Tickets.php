@@ -433,7 +433,7 @@ class Tickets
             $ticketData = array(
                 'modtagerNavn'              => (!$modtagerdata)?"Modtager findes ikke i databasen!":$modtagerdata['navn'],
                 'modtagerID'                => $row->modtagerID,
-                'modtagerDato'              => date('d-m-Y', strtotime($row->modtager_dato)),
+                'modtagerDato'              => date('d-m-Y k\l. H:m', strtotime($row->modtager_dato)),
                 'kontaktNavn'               => $row->kontakt_navn,
                 'kontaktTlf'                => $row->kontakt_tlf,
                 'kontaktEmail'              => $row->kontakt_email,
