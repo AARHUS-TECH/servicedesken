@@ -83,7 +83,7 @@ $userdata = $user->getInfo(Session::get('userID'));
                                         <fieldset>
                                             <input type="hidden" name="sagsID" value="<?php echo Input::get('id'); ?>">
                                             <div class="form-group form-row">
-                                                <label for="inputOprettetAf">Oprettet af (Auto)</label>
+                                                <label for="inputOprettetAf">Oprettet af (Auto) d. <?php echo $currentTicket['modtagerDato']; ?></label>
                                                 <input type="text" class="form-control" id="eksempelInputOprettetAf" placeholder="Oprettet af" value="<?php echo $currentTicket['modtagerNavn']; ?>" readonly="">
                                                 <input type="hidden"name="id" value="<?php echo $currentTicket['modtagerID']; ?>">
                                             </div>
